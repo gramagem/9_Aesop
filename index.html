@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Aeosop</title>
+    <style type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa|Ibarra+Real+Nova&display=swap" rel="stylesheet">
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root{
+            --ibarra: 'Ibarra Real Nova', serif;
+            --confortaa: 'Comfortaa', cursive;
+            --crema: #FFFEF3;
+        }
+        img{
+            width: 100%;
+        }
+        body{
+            background: var(--crema);
+        }
+        menu{
+            font-family: var(--ibarra);
+            display: flex;
+            justify-content: flex-end;
+            padding: 1em;
+        }
+        menu select, menu a, menu ul{
+            padding: 0 1em;
+        }
+        ul ul{
+            visibility: hidden;
+            position: absolute;
+            background: var(--crema);
+            padding: 1em;
+        }
+        menu select{
+            border: none;
+            background: var(--cremma);
+        }
+        ul li:hover ul{
+            list-style-type: none;
+            visibility: inherit;
+        }
+        ul li ul li{
+            padding: 0.5em;
+            font-size: 2em;
+        }
+        ul li ul li a{
+            color: black;
+        }
+        h1{
+            width: 10%;
+            display:flex;
+            padding-left: 17.8em;
+            justify-content: center;
+        }
+        h2{
+            font-family: var(--ibarra);
+            font-size: 1.25em;
+            padding-left: 27.5em;
+            justify-content: center;
+        }
+        nav{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 2em 4em;
+        }
+        nav .navigation a:first-child{
+            border-bottom: 1px solid black;
+        }
+        nav a{
+            color: black;
+            margin: 0 1em 0 0;
+        }
+        main{
+            padding: 2em 4em;
+        }
+        .container{
+            display: grid;
+            grid-template: repeat(8, 130px) / repeat(5, 1fr);
+            grid-gap: 00px;
+            border: 1px solid black;
+            font-size: 8px;
+            line-height: 0.05em;
+        }
+        .container>div{
+            display: flex;
+            flex-direction: column;
+        }
+        div header{
+            display: flex;
+            flex-direction: column;
+        }
+        .cont_img{
+            flex-grow: 1;
+            overflow: hidden;
+            padding: 10px 10px 0 10px;
+        }
+        .cont_img img{
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+        .container header{
+            height: 30px;
+            padding: 0 10px 10px 10px;
+            text-align: center;
+        }
+        .item1{
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 5;
+        }
+        .item2{
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        .item3{
+            display: flex;
+            align-content: center;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        .item4{
+            display: flex;
+            align-content: center;
+            border-bottom: 1px solid black;
+            grid-column-start: 5;
+            grid-column-end: 6;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+        .item5{
+            border-bottom: 1px solid black;
+            display: flex;
+            font-size: 16px;
+            padding-top: 90px;
+            grid-column-start: 4;
+            grid-column-end: 6;
+            grid-row-start: 3;
+            grid-row-end: 5;
+        }
+        .item6{
+            display: flex;
+            align-content: center;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 5;
+            grid-row-end: 7;
+        }
+        .item7{
+            display: flex;
+            align-content: center;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 5;
+            grid-row-end: 6;
+        }
+        .item8{
+            display: flex;
+            align-content: center;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 6;
+            grid-row-end: 7;
+        }
+        .item9{
+            display: flex;
+            align-content: center;
+            border-right: 1px solid black;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 7;
+            grid-row-end: 9;
+        }
+        .item10{
+            display: flex;
+            align-content: center;
+            border-right: 1px solid black;
+            grid-column-start: 3;
+            grid-column-end: 5;
+            grid-row-start: 5;
+            grid-row-end: 9;
+        }
+       .item11{
+           display: flex;
+           align-content: center;
+           grid-column-start: 5;
+           grid-column-end: 6;
+           grid-row-start: 5;
+           grid-row-end: 9;
+        }
+    </style>
+</head>
+    <body>
+        <header>
+            <menu>
+                <select name="language" id="idioma">
+                    <option value="frances">Francès</option>
+                    <option value="angles">Anglès</option>
+                    <option value="italia">Italià</option>
+                </select>
+                <a href="http://aeosop.com">aeosop.com</a>
+                <ul>
+                    <li>Share</li>
+                        <ul>
+                            <li><a href="#"><i class="far fa-envelope"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook-fi"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab pinterest-p"></i></a></li>
+                        </ul>  
+                </ul>
+            </menu>
+             <h1><img src="img/logo.png" alt="Aesop"></h1>
+             <h2>Taxonomy of Design</h2>
+             <nav>
+                <a href="#">Philosophy</a>
+                    <div class="navigation">
+                        <a href="#">all</a>
+                        <a href="#">stores</a>
+                        <a href="#">Designers</a>
+                        <a href="#">Features</a>
+                        <a href="#">Materials</a>
+                        <a href="#">Quotes</a>
+                    </div>
+                <form>
+                    <input type="text" value="search"/>
+                        <a href="#"><i class="fas fa-search"></i></a>
+                </form>
+            </nav>
+        </header>
+        <main>
+           <div class="container">
+               <div class="item1">
+                   <div class="cont_img">
+                       <img src="img/aeosop_07.jpg" alt="">
+                   </div>
+                   <header>
+                       <h3>KYOTO</h3>
+                       <h4>KYOTO, JAPAN</h4>
+                   </header>
+               </div>
+               <div class="item2">
+                   <div class="cont_img">
+                       <img src="img/aeosop_09.jpg" alt="">
+                   </div>
+                   <header>
+                       <h3>MARBLE</h3>
+                       <h4>SAINT-SULPICE, FRANCE</h4>
+                   </header>
+               </div>
+               <div class="item3">
+                   <div class="cont_img">
+                       <img src="img/aeosop_14.jpg" alt="">
+                   </div>
+                   <header>
+                       <h3>WAXED CCONCRETE</h3>
+                       <h4>TIQUETTONE-FRANCE</h4>
+                   </header>
+               </div>
+               <div class="item4">
+                   <div class="cont_img">
+                       <img src="img/aeosop_11.jpg" alt="">
+                   </div>
+                   <header>
+                       <h3>SNOHETTA</h3>
+                   </header>
+               </div>
+               <div class="item5">
+                   <header>
+                       <h3>John Raldolph</h3>
+                   </header>
+               </div>
+               <div class="item6">
+                   <div class="cont_img">
+                       <img src="img/aeosop_18.jpg" alt="">
+                   </div>
+                   <header>
+                       <h3>STUDIO ILSE</h3>
+                   </header>
+               </div>
+               <div class="item7">
+                   <div class="cont_img">
+                       <img src="img/aeosop_20.jpg" alt="">
+                   </div>
+                   <header>
+                       <h3>BLACKNED STEEL</h3>
+                       <h4>NEWBURY STREET, USA</h4>
+                   </header>
+               </div>
+               <div class="item8">
+                   <div class="cont_img">
+                       <img src="img/aeosop_25.jpg" alt="">
+                   </div>
+                   <header>
+                       <h3>SISAL FLOORING</h3>
+                       <h4>GENEVA, SWITZERLAND</h4>
+                   </header>
+               </div>
+               <div class="item9">
+                   <div class="cont_img">
+                       <img src="img/aeosop_28.jpg" alt="">
+                   </div>
+                   <header>
+                       <h3>COCONUT HUSK FRINGING</h3>
+                       <h4>MILLENIA WALK, SINGAPORE</h4>
+                   </header>
+               </div>
+               <div class="item10">
+                   <div class="cont_img">
+                       <img src="img/aeosop_22.jpg" alt="">
+                   </div>
+                   <header>
+                       <h3>THE PARIS REVIEW</h3>
+                       <h4>CHEALSEY, USA</h4>
+                   </header>
+               </div>
+               <div class="item11">
+                   <div class="cont_img">
+                       <img src="img/aeosop_23.jpg" alt="">
+                   </div>
+                   <header>
+                       <h3>HENRY WILLSON STUDIOS</h3>
+                   </header>
+               </div>
+            </div>  
+        </main>
+
+    </body>
+</html>
